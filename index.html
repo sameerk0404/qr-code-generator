@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QR Code Generator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 40px;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .qr-container {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 15px;
+      border: 2px dashed #666;
+      border-radius: 10px;
+    }
+    canvas {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+  <input type="text" id="qrText" placeholder="Enter text or URL" />
+  <br>
+  <button onclick="generateQR()">Generate QR Code</button>
+  <br><br>
+  <div class="qr-container" id="qrWrapper" style="display: none;">
+    <canvas id="qrCanvas"></canvas>
+  </div>
+  <br>
+  <button id="downloadBtn" onclick="downloadQR()" style="display: none;">Download QR Code</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
